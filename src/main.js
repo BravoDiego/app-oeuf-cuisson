@@ -1,9 +1,11 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('node:path')
 
+let timerValue = 0;
+
 function createWindow () {
   const mainWindow = new BrowserWindow({
-        width: 400,
+        width: 600,
         height: 500,
         frame: false, // Supprime la barre classique
         resizable: false,
@@ -28,6 +30,12 @@ function createWindow () {
     const win = BrowserWindow.fromWebContents(webContents)
     win.minimize()
   })
+
+  ipcMain.on('save-timer', (event, time) => {
+    timerValue = time;
+  });
+  
+  ipcMain.handle('get-timer', () => timerValue);
 
   mainWindow.loadFile('src/menu.html')
 }

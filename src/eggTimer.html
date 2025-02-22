@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <title>Egg Timer - Choice</title>
     <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    Title: <input id="title"/>
-    <button id="btn" type="button">Set</button>
+</head>
+<body>
     <button id="exit-btn" type="button">Exit</button>
     <button id="minimize-btn" type="button">Minimize</button>
+    <button id="startTimer" type="button"><a href="timers.html">Retour</a></button>
+    <h1>Egg Timer</h1>
+    <div id="choice">
+        <h2></h2>
+        <h3 id="timer-text"></h3>
+    </div>
     <script src="./renderer.js"></script>
-  </body>
+</body>
 </html>
