@@ -7,19 +7,15 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
         width: 600,
         height: 500,
-        frame: false, // Supprime la barre classique
         resizable: false,
+        autoHideMenuBar: true,
         webPreferences: {
           nodeIntegration: true,
           preload: path.join(__dirname, '..', '..', 'src', 'preload.js')
         }
   })
 
-  ipcMain.on('set-title', (event, title) => {
-    const webContents = event.sender
-    const win = BrowserWindow.fromWebContents(webContents)
-    win.setTitle(title)
-  })
+  ipcMain.handle('get-timer', () => timerValue);
 
   ipcMain.on('exit-app', () => {
     app.quit()
@@ -32,12 +28,10 @@ function createWindow () {
   })
 
   ipcMain.on('save-timer', (event, time) => {
-    timerValue = time;
+    timerValue = parseInt(time, 10);
   });
-  
-  ipcMain.handle('get-timer', () => timerValue);
 
-  mainWindow.loadFile('src/menu.html')
+  mainWindow.loadFile('src/index.html')
 }
 
 app.whenReady().then(() => {

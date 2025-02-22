@@ -42,6 +42,8 @@ if (choice && timerCountDown) {
 
 function startTimer(seconds) {
   timerCountDown.textContent = `${seconds} secondes restantes`;
+  let snoozeBtn = document.querySelector('button#snooze');
+  let backBtn = document.querySelector('button#back');
   
   let interval = setInterval(() => {
       seconds--;
@@ -50,6 +52,9 @@ function startTimer(seconds) {
       if (seconds <= 0) {
           clearInterval(interval);
           timerCountDown.textContent = "Terminé ! 🥚";
+          snoozeBtn.classList.toggle('hidden');
+          backBtn.classList.toggle('hidden');
+
       }
   }, 1000);
 }

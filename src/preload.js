@@ -5,5 +5,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   exitApp : () => ipcRenderer.send('exit-app'),
   minimizeApp : () => ipcRenderer.send('minimize-app'),
   saveTimer: (time) => ipcRenderer.send('save-timer', time),
-  getTimer: () => ipcRenderer.invoke('get-timer')
+  getTimer: () => ipcRenderer.invoke('get-timer'),
 })

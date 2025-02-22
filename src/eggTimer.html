@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <button id="exit-btn" type="button">Exit</button>
-    <button id="minimize-btn" type="button">Minimize</button>
-    <button id="startTimer" type="button"><a href="timers.html">Retour</a></button>
-    <h1>Egg Timer</h1>
+    <nav>
+        <button id="exit-btn" type="button">Exit</button>
+        <button id="minimize-btn" type="button">Minimize</button>
+        <button id="startTimer" type="button"><a href="menu.html">Retour</a></button>
+        <h1>Egg Timer</h1>
+    </nav>
     <div id="choice">
         <h2></h2>
         <h3 id="timer-text"></h3>
     </div>
+    <button id="snooze" class="hidden" type="button">Snooze</button>
+    <button id="back" class="hidden" type="button"><a href="index.html">Back</a></button>
     <script src="./renderer.js"></script>
 </body>
 </html>
