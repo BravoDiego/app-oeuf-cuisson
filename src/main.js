@@ -8,6 +8,7 @@ function createWindow () {
         frame: false, // Supprime la barre classique
         resizable: false,
         webPreferences: {
+          nodeIntegration: true,
           preload: path.join(__dirname, '..', '..', 'src', 'preload.js')
         }
   })
@@ -28,7 +29,7 @@ function createWindow () {
     win.minimize()
   })
 
-  mainWindow.loadFile('src/index.html')
+  mainWindow.loadFile('src/menu.html')
 }
 
 app.whenReady().then(() => {

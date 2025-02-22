@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Egg Timer</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
+    <button id="exit-btn" type="button">Exit</button>
+    <button id="minimize-btn" type="button">Minimize</button>
+    <h1>Egg Timer</h1>
+    <button id="startTimer" type="button"><a href="index.html">Start</a></button>
+    <script src="./renderer.js"></script>
 </body>
 </html>
