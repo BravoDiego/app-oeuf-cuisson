@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Egg Timer - Choices</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <nav>
         <h1>Egg Timer</h1>
-        <button id="minimize-btn" type="button"></button>
-        <button id="exit-btn" type="button"></button>
+        <div>
+            <button id="minimize-btn" type="button"></button>
+            <button id="exit-btn" type="button"></button>
+        </div>
     </nav>
-    <div class="choices">
-        <button class="timer-btn" data-time="10">À la coque (3 min)</button>
-        <button class="timer-btn" data-time="360">Mollet (6 min)</button>
-        <button class="timer-btn" data-time="540">Dur (9 min)</button>
-        <button class="timer-btn" data-time="720">Très dur (12 min)</button>
-    </div>
+    <main id="menu">
+        <div class="choices">
+            <button class="timer-btn" data-time="10">À la coque (3 min)</button>
+            <button class="timer-btn" data-time="360">Mollet (6 min)</button>
+            <button class="timer-btn" data-time="540">Dur (9 min)</button>
+            <button class="timer-btn" data-time="720">Très dur (12 min)</button>
+        </div>
+    </main>
     <script src="./renderer.js"></script>
 </body>
 </html>

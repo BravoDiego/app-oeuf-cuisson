@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("./fonts/PixelifySans-Regular.ttf") format("truetype");
+}
+
 :root {
   --color-primary: #6C9BA7;
   --color-secondary: #6c757d;
@@ -9,7 +13,7 @@
   --r: 4px;
 }
 
-*, ::before, ::after {
+*, ::before, ::after, a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -19,26 +23,43 @@ body {
   font-family: 'Pixelify Sans';
   font-style: normal;
   background-color: var(--color-light);
+  padding: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-top: 0;
+  border-radius: var(--r);
+  /* Component 2 */
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 body nav h1 {
-    /* Egg Timer */
-
-  position: absolute;
-  width: 182px;
-  height: 42px;
-  left: 15px;
-  top: 22px;
-
   font-family: 'Pixelify Sans';
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 33px;
   line-height: 43px;
+  color: var(--color-primary);
+}
+
+body nav > div {
+  width: 90px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
 
-  color: var(--color-primary);
+body nav#nav-egg-timer-back > div {
+  width: 140px;
 }
 
 body nav button {
@@ -47,8 +68,21 @@ body nav button {
   outline: none;
   border-radius: var(--r);
   cursor: pointer;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+
+body nav button:hover {
+  transform: scale(1.05);
+}
+
+button > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: var(--color-primary);
 }
 
 body nav button#exit-btn {
@@ -58,10 +92,6 @@ body nav button#exit-btn {
   background-position: center;
   image-rendering: pixelated;
   /* exit */
-
-  position: absolute;
-  left: 335px;
-  top: 20px;
 }
 body nav button#minimize-btn {
   background-image: url('./assets/minimize.png'); /* Remplace par le chemin relatif de ton image */
@@ -71,12 +101,16 @@ body nav button#minimize-btn {
   image-rendering: pixelated;
   /* minimize */
 
-  position: absolute;
-  left: 268px;
-  top: 20px;
+}
+body nav#nav-egg-timer-back button#startTimer {
+  background-image: url('./assets/back.png'); /* Remplace par le chemin relatif de ton image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
 }
 
-body main {
+body main#index-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,13 +121,66 @@ body main {
   image-rendering: pixelated;
   border-radius: var(--r);
   /* Component 1 */
+  width: 315px;
+  height: 315px;
+}
 
-  position: absolute;
-  width: 360px;
-  height: 335px;
-  left: 20px;
-  top: 94px;
+body main button#startTimer {
+  border: none;
+  background-color: var(--color-light);
+  color: var(--color-primary);
+  border-radius: var(--r);
+  cursor: pointer;
+  padding: 2px 10px;
+  /* START */
 
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+main > button#startTimer {
+  text-decoration: none;
+  display: inline-block;
+  animation: scaleUp 1s forwards ease-in-out infinite;
+}
+
+main#menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+  grid-template-rows: 1fr 1fr; /* Deux lignes égales */
+  width: 315px;
+  height: 315px;
+  gap: 10px; /* Espacement entre les boutons (facultatif) */
+}
+
+main#menu > .choices {
+  display: contents; /* Permet aux enfants d'occuper tout l'espace de `main` */
+}
+
+main#menu > .choices > .timer-btn {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem; /* Ajuste la taille du texte */
+  border: none;
+  background-color: var(--color-primary);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  border-radius: var(--r);
+}
+
+main#menu > .choices > .timer-btn:hover {
+  transform: scale(1.05); /* Petit effet au survol */
 }
 
 .hidden {

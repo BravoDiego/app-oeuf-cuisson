@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Egg Timer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <nav>
         <h1>Egg Timer</h1>
-        <button id="minimize-btn" type="button"></button>
-        <button id="exit-btn" type="button"></button>
+        <div>
+            <button id="minimize-btn" type="button"></button>
+            <button id="exit-btn" type="button"></button>
+        </div>
     </nav>
-    <main>
-        <button id="startTimer" type="button"><a href="menu.html">Start</a></button>
+    <main id="index-menu">
+        <button id="startTimer" type="button"><a href="menu.html">START</a></button>
     </main>
     <script src="./renderer.js"></script>
 </body>
