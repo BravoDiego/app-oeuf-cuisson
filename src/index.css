@@ -1,3 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+:root {
+  --color-primary: #6C9BA7;
+  --color-secondary: #6c757d;
+  --color-light: #E1C97A;
+  --color-dark: #343a40;
+  --color-white: #fff;
+  --color-black: #000;
+  --r: 4px;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  background-color: var(--color-light);
+}
+
+body nav h1 {
+    /* Egg Timer */
+
+  position: absolute;
+  width: 182px;
+  height: 42px;
+  left: 15px;
+  top: 22px;
+
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+  display: flex;
+  align-items: center;
+
+  color: var(--color-primary);
+}
+
+body nav button {
+  border: none;
+  background-color: none;
+  outline: none;
+  border-radius: var(--r);
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+}
+
+body nav button#exit-btn {
+  background-image: url('./assets/exit.png'); /* Remplace par le chemin relatif de ton image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  /* exit */
+
+  position: absolute;
+  left: 335px;
+  top: 20px;
+}
+body nav button#minimize-btn {
+  background-image: url('./assets/minimize.png'); /* Remplace par le chemin relatif de ton image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  /* minimize */
+
+  position: absolute;
+  left: 268px;
+  top: 20px;
+}
+
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/background_cloud.png'); /* Remplace par le chemin relatif de ton image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  border-radius: var(--r);
+  /* Component 1 */
+
+  position: absolute;
+  width: 360px;
+  height: 335px;
+  left: 20px;
+  top: 94px;
+
+}
+
 .hidden {
   display: none;
 }

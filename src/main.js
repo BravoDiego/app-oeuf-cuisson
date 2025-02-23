@@ -5,8 +5,8 @@ let timerValue = 0;
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
-        width: 600,
-        height: 500,
+        width: 418,
+        height: 487,
         resizable: false,
         autoHideMenuBar: true,
         webPreferences: {
