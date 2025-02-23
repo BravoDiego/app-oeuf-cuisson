@@ -1,6 +1,7 @@
 const setButton = document.getElementById('btn')
 const titleInput = document.getElementById('title')
 
+
 if (setButton && titleInput) {
   setButton.addEventListener('click', () => {
     const title = titleInput.value;
@@ -31,30 +32,56 @@ if (timerBtn) {
   });
 }
 
+
+const eggCookTimes = {
+  180: "soft",
+  360: "medium",
+  540: "hard",
+  720: "extra-hard"
+};
+
 const choice = document.querySelector('#choice h2');
 let timerCountDown = document.querySelector('#choice h3#timer-text');
-if (choice && timerCountDown) {
+let image = document.querySelector('#image-cooked');
+const alarmSound = new Audio('./assets/alarm.mp3');
+let cuisson = "";
+if (choice && timerCountDown && image) {
   window.electronAPI.getTimer().then(savedTime => {
-    choice.textContent = `Vous avez choisi un temps de ${savedTime} secondes.`;
+    cuisson = eggCookTimes[savedTime]
+    choice.textContent = `You chose ${cuisson} eggs.`;
+    image.classList.add(cuisson);
     startTimer(savedTime);
   });
 }
 
+function formatTime(seconds) {
+  let minutes = Math.floor(seconds / 60);
+  let secs = seconds % 60;
+  return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
 function startTimer(seconds) {
-  timerCountDown.textContent = `${seconds} secondes restantes`;
+  timerCountDown.textContent = formatTime(seconds);
   let snoozeBtn = document.querySelector('button#snooze');
   let backBtn = document.querySelector('button#back');
-  
+
   let interval = setInterval(() => {
       seconds--;
-      timerCountDown.textContent = `${seconds} secondes restantes`;
+      timerCountDown.textContent = formatTime(seconds);
       
       if (seconds <= 0) {
           clearInterval(interval);
-          timerCountDown.textContent = "Terminé ! 🥚";
+          timerCountDown.textContent = "";
+          timerCountDown.classList.toggle('hidden');
           snoozeBtn.classList.toggle('hidden');
           backBtn.classList.toggle('hidden');
-
+          alarmSound.loop = true;
+          alarmSound.play();
       }
   }, 1000);
+
+  snoozeBtn.addEventListener('click', () => {
+    alarmSound.pause();
+    alarmSound.currentTime = 0; // Remet au début
+});
 }

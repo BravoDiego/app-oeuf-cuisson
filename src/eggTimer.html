@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Egg Timer - Choice</title>
+    <title>Egg Timer</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -17,10 +17,15 @@
     </nav>
     <div id="choice">
         <h2></h2>
-        <h3 id="timer-text"></h3>
+        <div id="image-cooked"></div>
+        <div id="container">
+            <h3 id="timer-text"></h3>
+            <div id="commands-btn">
+                <button id="snooze" class="hidden" type="button">Snooze</button>
+                <button id="back" class="hidden" type="button"><a href="index.html">Back</a></button>
+            </div>
+        </div>
     </div>
-    <button id="snooze" class="hidden" type="button">Snooze</button>
-    <button id="back" class="hidden" type="button"><a href="index.html">Back</a></button>
     <script src="./renderer.js"></script>
 </body>
 </html>
