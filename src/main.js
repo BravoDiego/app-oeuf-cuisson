@@ -9,7 +9,7 @@ function createWindow () {
         height: 455,
         resizable: false,
         autoHideMenuBar: true,
-        // icon: path.join(__dirname,'..', '..', 'src' 'assets', 'icon.png'),
+        icon: path.join(__dirname,'..', '..', 'src', 'assets', 'icon', 'icon.ico'),
         webPreferences: {
           nodeIntegration: true,
           preload: path.join(__dirname, '..', '..', 'src', 'preload.js')
@@ -46,3 +46,5 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
+
+app.commandLine.appendSwitch('log-level', '3');

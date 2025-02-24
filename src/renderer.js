@@ -43,7 +43,7 @@ const eggCookTimes = {
 const choice = document.querySelector('#choice h2');
 let timerCountDown = document.querySelector('#choice h3#timer-text');
 let image = document.querySelector('#image-cooked');
-const alarmSound = new Audio('./assets/alarm.mp3');
+let alarmSound = new Audio('./assets/alarm.ogg');
 let cuisson = "";
 if (choice && timerCountDown && image) {
   window.electronAPI.getTimer().then(savedTime => {

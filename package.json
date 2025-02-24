@@ -33,25 +33,5 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",
     "path-browserify": "^1.0.1"
-  },
-  "config": {
-  "forge": {
-    "packagerConfig": {
-      "icon": "assets/icon"
-    }
-  },
-  "build": {
-  "appId": "egg.timer.app",
-  "productName": "EggTimer",
-  "win": {
-    "icon": "assets/icon.ico"
-  },
-  "mac": {
-    "icon": "assets/icon.icns"
-  },
-  "linux": {
-    "icon": "assets/icon.png"
   }
-}
-}
 }
