@@ -9,9 +9,11 @@ if (setButton && titleInput) {
   });
 }
 
+/*
 window.electronAPI.getTimer().then(savedTime => {
   console.log(`Le temps enregistré est de ${savedTime} secondes.`);
 });
+*/
 
 document.getElementById("exit-btn").addEventListener('click', () => {
   window.electronAPI.exitApp();
