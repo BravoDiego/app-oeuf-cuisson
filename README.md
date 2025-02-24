@@ -33,10 +33,9 @@ npm start
 
 ## Screenshots
 
-**Screenshot 1**  
-![Screenshot 1](src\assets\app-screenshots.png)
-![Screenshot 2](src\assets\egg-cooking-screenshots.png)
-![Screenshot 3](src\assets\egg-timer.png)
+![Screenshot 1](src/assets/app-screenshots.png)
+![Screenshot 2](src/assets/egg-cooking-screenshots.png)
+![Screenshot 3](src/assets/egg-timer.png)
 
 ## Authors
 
